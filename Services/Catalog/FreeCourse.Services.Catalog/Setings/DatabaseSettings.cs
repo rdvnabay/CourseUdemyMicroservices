@@ -1,6 +1,6 @@
 ﻿namespace FreeCourse.Services.Catalog.Setings
 {
-    internal class DatabaseSettings : IDatabaseSettings
+    public class DatabaseSettings : IDatabaseSettings
     {
         public string CourseCollectionName { get; set; }
 
