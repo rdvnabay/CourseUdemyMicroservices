@@ -1,0 +1,19 @@
+﻿using FreeCourse.Services.Catalog.Dtos;
+using FreeCourse.Shared.Dtos;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace FreeCourse.Services.Catalog.Services
+{
+    internal interface ICourseService
+    {
+        Task<Response<List<CourseDto>>> GetAllAsync();
+        Task<Response<List<CourseDto>>> GetAllByUserId(string userId);
+        Task<Response<CourseDto>> GetByIdAsync(string courseId);
+        Task<Response<CourseDto>> CreateAsync(CourseCreateDto courseCreateDto);
+        Task<Response<NoContent>> UpdateAsync(CourseUpdateDto courseUpdateDto);
+        Task<Response<NoContent>> DeleteAsync(string courseId);
+    }
+}
