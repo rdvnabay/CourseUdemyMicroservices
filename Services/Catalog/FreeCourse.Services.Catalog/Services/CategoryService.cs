@@ -20,8 +20,9 @@ namespace FreeCourse.Services.Catalog.Services
             _categoryCollection = database.GetCollection<Category>(databaseSettings.CategoryCollectionName);
             _mapper = mapper;
         }
-        public async Task<Response<CategoryDto>> CreateAsync(Category category)
+        public async Task<Response<CategoryDto>> CreateAsync(CategoryDto categoryDto)
         {
+            var category = _mapper.Map<Category>(categoryDto);
             await _categoryCollection.InsertOneAsync(category);
             return Response<CategoryDto>.Success(_mapper.Map<CategoryDto>(category), 200);
         }
