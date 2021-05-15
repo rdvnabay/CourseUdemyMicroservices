@@ -33,6 +33,5 @@ namespace FreeCourse.Services.Catalog.Models
         [BsonIgnore]
         public Category Category { get; set; }
         public Feature Feature { get; set; }
-
     }
 }
