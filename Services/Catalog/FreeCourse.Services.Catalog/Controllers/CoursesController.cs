@@ -16,6 +16,7 @@ namespace FreeCourse.Services.Catalog.Controllers
             _courseService = courseService;
         }
 
+        [HttpPost]
         public async Task<IActionResult> Create(CourseCreateDto courseCreateDto)
         {
             var response = await _courseService.CreateAsync(courseCreateDto); ;
